@@ -1,0 +1,691 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F77570C326A9B68700C365CE /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570C226A9B68700C365CE /* Tests_iOS.swift */; };
+		F77570CE26A9B68700C365CE /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570CD26A9B68700C365CE /* Tests_macOS.swift */; };
+		F77570D026A9B68700C365CE /* Live_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570A726A9B68600C365CE /* Live_ItApp.swift */; };
+		F77570D126A9B68700C365CE /* Live_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570A726A9B68600C365CE /* Live_ItApp.swift */; };
+		F77570D226A9B68700C365CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570A826A9B68600C365CE /* ContentView.swift */; };
+		F77570D326A9B68700C365CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570A826A9B68600C365CE /* ContentView.swift */; };
+		F77570D426A9B68700C365CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77570A926A9B68700C365CE /* Assets.xcassets */; };
+		F77570D526A9B68700C365CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77570A926A9B68700C365CE /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F77570BF26A9B68700C365CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77570A226A9B68600C365CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77570AD26A9B68700C365CE;
+			remoteInfo = "Live It (iOS)";
+		};
+		F77570CA26A9B68700C365CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F77570A226A9B68600C365CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F77570B526A9B68700C365CE;
+			remoteInfo = "Live It (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F77570A726A9B68600C365CE /* Live_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Live_ItApp.swift; sourceTree = "<group>"; };
+		F77570A826A9B68600C365CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F77570A926A9B68700C365CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F77570AE26A9B68700C365CE /* Live It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77570B126A9B68700C365CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77570B626A9B68700C365CE /* Live It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77570B826A9B68700C365CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77570B926A9B68700C365CE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		F77570BE26A9B68700C365CE /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77570C226A9B68700C365CE /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		F77570C426A9B68700C365CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F77570C926A9B68700C365CE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F77570CD26A9B68700C365CE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		F77570CF26A9B68700C365CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F77570AB26A9B68700C365CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570B326A9B68700C365CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570BB26A9B68700C365CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570C626A9B68700C365CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F77570A126A9B68600C365CE = {
+			isa = PBXGroup;
+			children = (
+				F77570A626A9B68600C365CE /* Shared */,
+				F77570B026A9B68700C365CE /* iOS */,
+				F77570B726A9B68700C365CE /* macOS */,
+				F77570C126A9B68700C365CE /* Tests iOS */,
+				F77570CC26A9B68700C365CE /* Tests macOS */,
+				F77570AF26A9B68700C365CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F77570A626A9B68600C365CE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F77570A726A9B68600C365CE /* Live_ItApp.swift */,
+				F77570A826A9B68600C365CE /* ContentView.swift */,
+				F77570A926A9B68700C365CE /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F77570AF26A9B68700C365CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F77570AE26A9B68700C365CE /* Live It.app */,
+				F77570B626A9B68700C365CE /* Live It.app */,
+				F77570BE26A9B68700C365CE /* Tests iOS.xctest */,
+				F77570C926A9B68700C365CE /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F77570B026A9B68700C365CE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F77570B126A9B68700C365CE /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		F77570B726A9B68700C365CE /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F77570B826A9B68700C365CE /* Info.plist */,
+				F77570B926A9B68700C365CE /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		F77570C126A9B68700C365CE /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F77570C226A9B68700C365CE /* Tests_iOS.swift */,
+				F77570C426A9B68700C365CE /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		F77570CC26A9B68700C365CE /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				F77570CD26A9B68700C365CE /* Tests_macOS.swift */,
+				F77570CF26A9B68700C365CE /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F77570AD26A9B68700C365CE /* Live It (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77570D826A9B68700C365CE /* Build configuration list for PBXNativeTarget "Live It (iOS)" */;
+			buildPhases = (
+				F77570AA26A9B68700C365CE /* Sources */,
+				F77570AB26A9B68700C365CE /* Frameworks */,
+				F77570AC26A9B68700C365CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Live It (iOS)";
+			productName = "Live It (iOS)";
+			productReference = F77570AE26A9B68700C365CE /* Live It.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F77570B526A9B68700C365CE /* Live It (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77570DB26A9B68700C365CE /* Build configuration list for PBXNativeTarget "Live It (macOS)" */;
+			buildPhases = (
+				F77570B226A9B68700C365CE /* Sources */,
+				F77570B326A9B68700C365CE /* Frameworks */,
+				F77570B426A9B68700C365CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Live It (macOS)";
+			productName = "Live It (macOS)";
+			productReference = F77570B626A9B68700C365CE /* Live It.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F77570BD26A9B68700C365CE /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77570DE26A9B68700C365CE /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				F77570BA26A9B68700C365CE /* Sources */,
+				F77570BB26A9B68700C365CE /* Frameworks */,
+				F77570BC26A9B68700C365CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77570C026A9B68700C365CE /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = F77570BE26A9B68700C365CE /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F77570C826A9B68700C365CE /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F77570E126A9B68700C365CE /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				F77570C526A9B68700C365CE /* Sources */,
+				F77570C626A9B68700C365CE /* Frameworks */,
+				F77570C726A9B68700C365CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F77570CB26A9B68700C365CE /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = F77570C926A9B68700C365CE /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F77570A226A9B68600C365CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F77570AD26A9B68700C365CE = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F77570B526A9B68700C365CE = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					F77570BD26A9B68700C365CE = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F77570AD26A9B68700C365CE;
+					};
+					F77570C826A9B68700C365CE = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = F77570B526A9B68700C365CE;
+					};
+				};
+			};
+			buildConfigurationList = F77570A526A9B68600C365CE /* Build configuration list for PBXProject "Live It" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F77570A126A9B68600C365CE;
+			productRefGroup = F77570AF26A9B68700C365CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F77570AD26A9B68700C365CE /* Live It (iOS) */,
+				F77570B526A9B68700C365CE /* Live It (macOS) */,
+				F77570BD26A9B68700C365CE /* Tests iOS */,
+				F77570C826A9B68700C365CE /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F77570AC26A9B68700C365CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570D426A9B68700C365CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570B426A9B68700C365CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570D526A9B68700C365CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570BC26A9B68700C365CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570C726A9B68700C365CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F77570AA26A9B68700C365CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570D226A9B68700C365CE /* ContentView.swift in Sources */,
+				F77570D026A9B68700C365CE /* Live_ItApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570B226A9B68700C365CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570D326A9B68700C365CE /* ContentView.swift in Sources */,
+				F77570D126A9B68700C365CE /* Live_ItApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570BA26A9B68700C365CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570C326A9B68700C365CE /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F77570C526A9B68700C365CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77570CE26A9B68700C365CE /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F77570C026A9B68700C365CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77570AD26A9B68700C365CE /* Live It (iOS) */;
+			targetProxy = F77570BF26A9B68700C365CE /* PBXContainerItemProxy */;
+		};
+		F77570CB26A9B68700C365CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F77570B526A9B68700C365CE /* Live It (macOS) */;
+			targetProxy = F77570CA26A9B68700C365CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F77570D626A9B68700C365CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F77570D726A9B68700C365CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F77570D926A9B68700C365CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Live-It";
+				PRODUCT_NAME = "Live It";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F77570DA26A9B68700C365CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Live-It";
+				PRODUCT_NAME = "Live It";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F77570DC26A9B68700C365CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Live-It";
+				PRODUCT_NAME = "Live It";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		F77570DD26A9B68700C365CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Live-It";
+				PRODUCT_NAME = "Live It";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		F77570DF26A9B68700C365CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Live It (iOS)";
+			};
+			name = Debug;
+		};
+		F77570E026A9B68700C365CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Live It (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F77570E226A9B68700C365CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Live It (macOS)";
+			};
+			name = Debug;
+		};
+		F77570E326A9B68700C365CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "RikRoy.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Live It (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F77570A526A9B68600C365CE /* Build configuration list for PBXProject "Live It" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77570D626A9B68700C365CE /* Debug */,
+				F77570D726A9B68700C365CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77570D826A9B68700C365CE /* Build configuration list for PBXNativeTarget "Live It (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77570D926A9B68700C365CE /* Debug */,
+				F77570DA26A9B68700C365CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77570DB26A9B68700C365CE /* Build configuration list for PBXNativeTarget "Live It (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77570DC26A9B68700C365CE /* Debug */,
+				F77570DD26A9B68700C365CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77570DE26A9B68700C365CE /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77570DF26A9B68700C365CE /* Debug */,
+				F77570E026A9B68700C365CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F77570E126A9B68700C365CE /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F77570E226A9B68700C365CE /* Debug */,
+				F77570E326A9B68700C365CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F77570A226A9B68600C365CE /* Project object */;
+}
