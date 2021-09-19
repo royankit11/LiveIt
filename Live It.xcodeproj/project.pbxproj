@@ -13,7 +13,6 @@
 		F70CF11B26DE787600625573 /* HomeScreenIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CF11A26DE787600625573 /* HomeScreenIDModel.swift */; };
 		F70F530F26DD1DDF00D7F9FC /* MealItemCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F530E26DD1DDF00D7F9FC /* MealItemCall.swift */; };
 		F70F531226DD1E0700D7F9FC /* MealItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F531126DD1E0700D7F9FC /* MealItemModel.swift */; };
-		F70F531426DD1EAF00D7F9FC /* MealItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F531326DD1EAF00D7F9FC /* MealItemViewModel.swift */; };
 		F70F531626DD2C2200D7F9FC /* HomeScreenMealRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70F531526DD2C2200D7F9FC /* HomeScreenMealRow.swift */; };
 		F72F22BB26C3263B00B5E8B3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F22BA26C3263B00B5E8B3 /* ProfileScreen.swift */; };
 		F72F22BC26C3263B00B5E8B3 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72F22BA26C3263B00B5E8B3 /* ProfileScreen.swift */; };
@@ -43,6 +42,7 @@
 		F7A82A8F26B31B12000CF1C2 /* ExerciseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A82A8D26B31B12000CF1C2 /* ExerciseScreen.swift */; };
 		F7AFAD5B26AF6BCA0082AE45 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AFAD5A26AF6BCA0082AE45 /* HomeScreen.swift */; };
 		F7AFAD5C26AF6BCA0082AE45 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AFAD5A26AF6BCA0082AE45 /* HomeScreen.swift */; };
+		F7BEF91126F7911E00D69CC9 /* MealItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BEF91026F7911E00D69CC9 /* MealItemViewModel.swift */; };
 		F7C1859926CD874300EBEC63 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1859826CD874300EBEC63 /* ProgressBar.swift */; };
 		F7C1859A26CD874300EBEC63 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1859826CD874300EBEC63 /* ProgressBar.swift */; };
 		F7C1859C26CD92BB00EBEC63 /* MealDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1859B26CD92BB00EBEC63 /* MealDetailScreen.swift */; };
@@ -77,7 +77,6 @@
 		F70CF11A26DE787600625573 /* HomeScreenIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenIDModel.swift; sourceTree = "<group>"; };
 		F70F530E26DD1DDF00D7F9FC /* MealItemCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItemCall.swift; sourceTree = "<group>"; };
 		F70F531126DD1E0700D7F9FC /* MealItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItemModel.swift; sourceTree = "<group>"; };
-		F70F531326DD1EAF00D7F9FC /* MealItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItemViewModel.swift; sourceTree = "<group>"; };
 		F70F531526DD2C2200D7F9FC /* HomeScreenMealRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMealRow.swift; sourceTree = "<group>"; };
 		F72F22BA26C3263B00B5E8B3 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		F72F22BD26C3274500B5E8B3 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		F7981F0826C335EA00017492 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		F7A82A8D26B31B12000CF1C2 /* ExerciseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScreen.swift; sourceTree = "<group>"; };
 		F7AFAD5A26AF6BCA0082AE45 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		F7BEF91026F7911E00D69CC9 /* MealItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealItemViewModel.swift; sourceTree = "<group>"; };
 		F7C1859826CD874300EBEC63 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		F7C1859B26CD92BB00EBEC63 /* MealDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailScreen.swift; sourceTree = "<group>"; };
 		F7CAE5EB26C47EE400521ACE /* MealPrefsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPrefsScreen.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				F70F530E26DD1DDF00D7F9FC /* MealItemCall.swift */,
 				F70F531126DD1E0700D7F9FC /* MealItemModel.swift */,
 				F765718326B0AFE200BAAD6B /* MealItem.swift */,
-				F70F531326DD1EAF00D7F9FC /* MealItemViewModel.swift */,
+				F7BEF91026F7911E00D69CC9 /* MealItemViewModel.swift */,
 			);
 			path = Meals;
 			sourceTree = "<group>";
@@ -432,6 +432,7 @@
 				F765718D26B0B42200BAAD6B /* WorkoutItem.swift in Sources */,
 				F754B45E26DFC30F00840971 /* OverallNavigation.swift in Sources */,
 				F77570D226A9B68700C365CE /* ContentView.swift in Sources */,
+				F7BEF91126F7911E00D69CC9 /* MealItemViewModel.swift in Sources */,
 				F70CF11626DE690A00625573 /* HomeScreenCall.swift in Sources */,
 				F7C1859C26CD92BB00EBEC63 /* MealDetailScreen.swift in Sources */,
 				F77570D026A9B68700C365CE /* Live_ItApp.swift in Sources */,
@@ -450,7 +451,6 @@
 				F70CF11826DE69FC00625573 /* HomeScreenModel.swift in Sources */,
 				F7C1859926CD874300EBEC63 /* ProgressBar.swift in Sources */,
 				F7CAE5EC26C47EE400521ACE /* MealPrefsScreen.swift in Sources */,
-				F70F531426DD1EAF00D7F9FC /* MealItemViewModel.swift in Sources */,
 				F70F531626DD2C2200D7F9FC /* HomeScreenMealRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

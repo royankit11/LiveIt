@@ -51,7 +51,7 @@ struct MealsScreen: View {
                         }
                     )
                     
-                    Spacer().frame(width: 20)
+                    Spacer().frame(width: 30)
                 }
                 
                 DatePicker("Calendar", selection: $selectedDate, displayedComponents: .date)
