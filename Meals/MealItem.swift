@@ -19,22 +19,17 @@ struct MealItem: View, Hashable {
     var body: some View {
         
         if(imgName == "AddMeal") {
-            NavigationLink(
-                destination: OverallNavigation(selection: .meals).navigationBarHidden(true),
-                label: {
-                    VStack(alignment: .leading) {
-                        Image(imgName)
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 199, height: 136)
-                            .cornerRadius(5)
-                        Text("Add " + MOD)
-                            .foregroundColor(.primary)
-                            .font(.caption)
-                    }
-                    .padding(.leading, 15)
-                }
-            )
+            VStack(alignment: .leading) {
+                Image(imgName)
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 199, height: 136)
+                    .cornerRadius(5)
+                Text("Add " + MOD)
+                    .foregroundColor(.primary)
+                    .font(.caption)
+            }
+            .padding(.leading, 15)
         } else if(isHomeScreen) {
             Link(destination: URL(string: link)!) {
                 VStack(alignment: .leading) {

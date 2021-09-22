@@ -13,7 +13,7 @@ struct CircleImage: View {
     var body: some View {
         image.renderingMode(.original)
             .resizable()
-            .frame(height: 200)
+            .frame(width: 200, height: 200)
             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
             .overlay(Circle()
             .stroke(Color.white, lineWidth: 4))
@@ -23,6 +23,6 @@ struct CircleImage: View {
 
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage(image: Image("Meals"))
+        CircleImage(image: Image("PersonIcon"))
     }
 }

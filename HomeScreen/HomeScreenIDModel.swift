@@ -12,5 +12,6 @@ struct HomeScreenIDModel: Codable, Hashable, Identifiable {
     let B_ID: Int
     let L_ID: Int
     let D_ID: Int
+    let W_ID: Int
     let Error: String
 }

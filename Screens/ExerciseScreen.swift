@@ -15,104 +15,37 @@ struct ExerciseScreen: View {
         return formatter
     }()
     
+    @ObservedObject var model: WorkoutViewModel
+    
+    init() {
+        self.model = WorkoutViewModel()
+    }
+    
     var body: some View {
         VStack {
             ScrollView {
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 100)
                 
                 Text("Exercise").font(.custom("DIN Alternate", size: 45))
                 
-                DatePicker("Calendar", selection: $selectedDate, displayedComponents: .date)
-                    .datePickerStyle(GraphicalDatePickerStyle())
-                    .frame(width: 350, height: 300)
+                Spacer().frame(height: 50)
                 
-                Text("\(selectedDate, formatter: dateFormatter) Workout").font(.custom("DIN Alternate", size: 20))
+                Text("Workouts").font(.custom("DIN Alternate", size: 20))
                 
-                WorkoutRow(items: [WorkoutItem(imgName: "LegWorkout2", title: "PERFECT Leg Workout", link: "https://youtu.be/RjexvOAsVtI", time: 14, calories: 41, isHomeScreen: false), WorkoutItem(imgName: "LegWorkout2", title: "PERFECT Leg Workout", link: "https://youtu.be/RjexvOAsVtI", time: 14, calories: 41, isHomeScreen: false)])
+                VStack(alignment: .leading) {
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(alignment: .top, spacing: 0) {
+                            ForEach(model.workouts, id: \.self) { workout in
+                                WorkoutItem(imgName: workout.ImageName, title: workout.Title, link: workout.Link, time: workout.Time, calories: workout.Calories, isHomeScreen: false, id: workout.id)
+                            }
+                        }
+                    }
+                    .frame(height: 185)
+                }
                 
                 Spacer()
             }
-            /*
-            Divider()
-            
-            HStack {
-                Spacer().frame(width: 20)
-                
-                NavigationLink(
-                    destination: HomeScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Home")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Home")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: MealsScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Meals")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Meals")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ExerciseScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("ExerciseSelected")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-                    
-
-                            Text("Exercise")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ProfileScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Account")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Profile")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer()
-            }*/
         }.ignoresSafeArea(edges: .top)
     }
 }

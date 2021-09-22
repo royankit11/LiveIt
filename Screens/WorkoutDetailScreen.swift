@@ -1,28 +1,29 @@
 //
-//  MealDetailScreen.swift
+//  WorkoutDetailScreen.swift
 //  Live It
 //
-//  Created by Rik Roy on 8/18/21.
+//  Created by Rik Roy on 9/21/21.
 //
 
 import SwiftUI
 
-struct MealDetailScreen: View {
+struct WorkoutDetailScreen: View {
+    
     var imgName: String
     var title: String
     var link: String
-    var mod: String
     var calories: Int
     var id: Int
+    var time: String
     var red = Color(red:255/255, green:135/255, blue:135/255)
     var gray = Color(red:186/255, green:186/255, blue:186/255)
     @State private var selected: Bool
     
-    init(imgName: String, title: String, link: String, mod: String, calories: Int, id: Int) {
+    init(imgName: String, title: String, link: String, time: String, calories: Int, id: Int) {
         self.imgName = imgName
         self.title = title
         self.link = link
-        self.mod = mod
+        self.time = time
         self.calories = calories
         self.id = id
         
@@ -32,7 +33,6 @@ struct MealDetailScreen: View {
     
     @ObservedObject var model: HomeScreenViewModel = HomeScreenViewModel()
     
-        
     var body: some View {
         VStack {
             Text(title).font(.custom("DIN Alternate", size: 45))
@@ -47,11 +47,11 @@ struct MealDetailScreen: View {
             Button {
                 selected.toggle()
                 
-                var mealID: Int
+                var workoutID: Int
                 if(selected == true) {
-                    mealID = id
+                    workoutID = id
                 } else {
-                    mealID = 0
+                    workoutID = 0
                 }
                 
                 let date = Date()
@@ -62,8 +62,9 @@ struct MealDetailScreen: View {
                 let monthString = dateFormatter.string(from: date)
                 dateFormatter.dateFormat = "d"
                 let dayString = dateFormatter.string(from: date)
-
-                model.fetchMeals(month: monthString, day: dayString, year: yearString, mealID: mealID, mealOfDay: mod)
+                    
+                print(workoutID)
+                model.fetchWorkouts(month: monthString, day: dayString, year: yearString, workoutID: workoutID)
                 
                 
                 
@@ -100,7 +101,7 @@ struct MealDetailScreen: View {
                         .frame(height:53)
                         .frame(width: 255)
                         .shadow(radius: 8)
-                    Text("View Recipe").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
+                    Text("View Video").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
                 }
             }
             
@@ -110,8 +111,8 @@ struct MealDetailScreen: View {
     }
 }
 
-struct MealDetailScreen_Previews: PreviewProvider {
+struct WorkoutDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MealDetailScreen(imgName: "ChickenKatsu", title: "Chicken Katsu", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", mod: "Dinner", calories: 610, id: 10)
+        WorkoutDetailScreen(imgName: "LegWorkout", title: "PERFECT Leg Workout", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", time: "14:32", calories: 42, id: 10)
     }
 }

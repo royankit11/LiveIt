@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    var totalCalories: Int = 2655
+    var totalCalories: Double = 66 + (6.3 * 105)
     var red = Color(red:255/255, green:135/255, blue:135/255)
 
     @ObservedObject var model: HomeScreenViewModel = HomeScreenViewModel()
@@ -24,6 +24,8 @@ struct HomeScreen: View {
     var lMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Lunch", calories: 0, id: 0, isHomeScreen: true)
     
     var dMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Dinner", calories: 0, id: 0, isHomeScreen: true)
+    
+    var workoutItem: WorkoutItem = WorkoutItem(imgName: "AddMeal", title: "", link: "", time: "", calories: 0, isHomeScreen: true, id: 0)
     
     let date = Date()
 
@@ -48,6 +50,7 @@ struct HomeScreen: View {
         let b_id = model.ids[0].B_ID
         let l_id = model.ids[0].L_ID
         let d_id = model.ids[0].D_ID
+        let w_id = model.ids[0].W_ID
 
     
         
@@ -68,8 +71,15 @@ struct HomeScreen: View {
             let meal = model.mealsFromID[0]
             dMeal = MealItem(imgName: meal.ImageName, title: meal.RecipeName, link: meal.Link, MOD: meal.MealOfDay, calories: meal.Calories, id: meal.id, isHomeScreen: true)
         }
+        
+        if(w_id != 0) {
+            model.chooseWorkouts(workoutID: w_id)
+            let workout = model.workoutsFromID[0]
+            workoutItem = WorkoutItem(imgName: workout.ImageName, title: workout.Title, link: workout.Link, time: workout.Time, calories: workout.Calories, isHomeScreen: true, id: workout.id)
+        }
 
         dailyCalories = bMeal.calories + lMeal.calories + dMeal.calories
+        totalCalories = (totalCalories + (12.9 * 68) - (6.8 * 16)) * 1.55
     }
     
     var body: some View {
@@ -154,7 +164,14 @@ struct HomeScreen: View {
                         Spacer()
                     }
                     
-                    WorkoutRow(items: [WorkoutItem(imgName: "AddMeal", title: "", link: "", time: 0, calories: 0, isHomeScreen: true)])
+                    HStack {
+                        workoutItem
+                        
+                        Spacer()
+                    }
+                    
+
+                    
                     
                     Spacer()
                 }
@@ -162,87 +179,6 @@ struct HomeScreen: View {
                 NavigationLink(destination: OverallNavigation(selection: .home).navigationBarHidden(true).navigationBarBackButtonHidden(true), isActive: $isShowingDetailView) { EmptyView() }
                 
             }
-            /*
-            Divider()
-            
-            HStack {
-                Spacer().frame(width: 20)
-                
-                NavigationLink(
-                    destination: HomeScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("HomeSelected")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Home")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: MealsScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Meals")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Meals")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ExerciseScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Exercise")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-                    
-
-                            Text("Exercise")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ProfileScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Account")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Profile")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer()
-            }*/
             
         }.ignoresSafeArea(edges: .top)
         

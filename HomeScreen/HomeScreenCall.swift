@@ -58,4 +58,36 @@ class HomeScreenCall {
             }
             }.resume()
     }
+    
+    func getWorkouts(month: String, day: String, year: String, workoutID: Int, completion: @escaping ([HomeScreenModel]) -> ()) {
+        guard let url = URL(string: "http://10.0.0.110:5000/chooseDailyWorkouts/" + month + "/" + day + "/" + year + "/" + String(workoutID))
+        else {
+            fatalError("URL is not correct!")
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            
+            let success = try! JSONDecoder().decode([HomeScreenModel].self, from: data!)
+            
+            DispatchQueue.main.async {
+                completion(success)
+            }
+            }.resume()
+    }
+    
+    func chooseWorkouts(workoutID: Int, completion: @escaping ([WorkoutModel]) -> ()) {
+        guard let url = URL(string: "http://10.0.0.110:5000/returnWorkouts/" + String(workoutID))
+        else {
+            fatalError("URL is not correct!")
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+            
+            let meals = try! JSONDecoder().decode([WorkoutModel].self, from: data!)
+            
+            DispatchQueue.global().async {
+                completion(meals)
+            }
+            }.resume()
+    }
 }

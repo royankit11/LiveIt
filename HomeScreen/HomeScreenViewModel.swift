@@ -31,6 +31,18 @@ class HomeScreenViewModel: ObservableObject {
         }
     }
     
+    var workouts = [HomeScreenModel]() {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    
+    var workoutsFromID = [WorkoutModel]() {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    
     func fetchMeals(month: String, day: String, year: String, mealID: Int, mealOfDay: String) {
         HomeScreenCall().getMeals(month: month, day: day, year: year, mealID: mealID, mealOfDay: mealOfDay) {
             self.meals = $0
@@ -53,6 +65,24 @@ class HomeScreenViewModel: ObservableObject {
         
         HomeScreenCall().chooseMeals(mealID: mealID) {
             self.mealsFromID = $0
+        }
+        
+        do {
+            sleep(1)
+        }
+        
+    }
+    
+    func fetchWorkouts(month: String, day: String, year: String, workoutID: Int) {
+        HomeScreenCall().getWorkouts(month: month, day: day, year: year, workoutID: workoutID) {
+            self.workouts = $0
+        }
+    }
+    
+    func chooseWorkouts(workoutID: Int) {
+        
+        HomeScreenCall().chooseWorkouts(workoutID: workoutID) {
+            self.workoutsFromID = $0
         }
         
         do {

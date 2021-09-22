@@ -53,13 +53,7 @@ struct DropdownView: View {
             }
 
             if showDetail {
-                if view == "CircleView" {
-                    CircleImage(image: Image("ScrambledEggs"))
-                        .transition(.moveAndFade)
-                } else if view == "Settings" {
-                    CircleImage(image: Image("ScrambledEggs"))
-                        .transition(.moveAndFade)
-                }
+                ProfileInfo().transition(.moveAndFade)
             }
         }
     }

@@ -12,13 +12,15 @@ struct ProfileScreen: View {
         VStack {
             ScrollView {
                 Group {
+                    Spacer().frame(height: 50)
+                    
                     Image("Background1")
                         .renderingMode(.original)
                         .resizable()
                         .ignoresSafeArea(edges: .top)
                         .frame(height: 200)
 
-                    CircleImage(image: Image("LegWorkout"))
+                    CircleImage(image: Image("PersonIcon"))
                         .offset(y: -70)
                         .padding(.bottom, -130)
                         .frame(height:30)
@@ -33,15 +35,8 @@ struct ProfileScreen: View {
                 }
                 
                 Group {
-                    DropdownView(thumbnail: Image("Goal"), title: Text("Goals"), view: "CircleView")
-                    
-                    Divider()
-                    
-                    DropdownView(thumbnail: Image("MealPref"), title: Text("Meal Preferences"), view: "Settings")
-                    
-                    Divider()
                 
-                    DropdownView(thumbnail: Image("Settings"), title: Text("Settings"), view: "Settings")
+                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings")
                     
                     Divider()
                 }

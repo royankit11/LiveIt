@@ -21,9 +21,9 @@ struct MealsScreen: View {
     @ObservedObject var dModel: MealItemViewModel
     
     init() {
-        self.bModel = MealItemViewModel(mod: "Breakfast", cals: 800, cuisines: "American")
-        self.lModel = MealItemViewModel(mod: "Lunch", cals: 800, cuisines: "Italian")
-        self.dModel = MealItemViewModel(mod: "Dinner", cals: 800, cuisines: "Mexican")
+        self.bModel = MealItemViewModel(mod: "Breakfast", cals: 800, cuisines: "American%20Italian%20Mexican%20Indian")
+        self.lModel = MealItemViewModel(mod: "Lunch", cals: 800, cuisines: "American%20Italian%20Mexican%20Japanese")
+        self.dModel = MealItemViewModel(mod: "Dinner", cals: 1200, cuisines: "American%20Italian%20Mexican%20Indian")
         
     }
 
@@ -31,7 +31,7 @@ struct MealsScreen: View {
         
         VStack {
             ScrollView {
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 80)
                 
                 HStack {
                     Spacer()
@@ -51,15 +51,10 @@ struct MealsScreen: View {
                         }
                     )
                     
-                    Spacer().frame(width: 30)
+                    Spacer().frame(width: 20)
                 }
                 
-                DatePicker("Calendar", selection: $selectedDate, displayedComponents: .date)
-                    .datePickerStyle(GraphicalDatePickerStyle())
-                    .frame(width: 350, height: 300)
-                    .alert(isPresented: $showingAlert, content: {
-                        Alert(title: Text("Important"), message: Text("hello"))
-                })
+                Spacer().frame(height: 50)
                 
                 Text("Breakfast Suggestions").font(.custom("DIN Alternate", size: 20))
                 

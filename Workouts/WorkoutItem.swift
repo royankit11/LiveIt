@@ -12,28 +12,24 @@ struct WorkoutItem: View, Hashable {
     let imgName: String
     let title: String
     let link: String
-    let time: Int
+    let time: String
     let calories: Int
     let isHomeScreen: Bool
+    let id: Int
     
     var body: some View {
         if(imgName == "AddMeal") {
-            NavigationLink(
-                destination: ExerciseScreen().navigationBarHidden(true),
-                label: {
-                    VStack(alignment: .leading) {
-                        Image(imgName)
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 199, height: 170)
-                            .cornerRadius(5)
-                        Text("Add Workout")
-                            .foregroundColor(.primary)
-                            .font(.caption)
-                    }
-                    .padding(.leading, 15)
-                }
-            )
+            VStack(alignment: .leading) {
+                Image(imgName)
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 199, height: 170)
+                    .cornerRadius(5)
+                Text("Add Workout")
+                    .foregroundColor(.primary)
+                    .font(.caption)
+            }
+            .padding(.leading, 15)
         } else if(isHomeScreen) {
             Link(destination: URL(string: link)!) {
                 VStack(alignment: .leading) {
@@ -45,7 +41,7 @@ struct WorkoutItem: View, Hashable {
                     Text(title)
                         .foregroundColor(.primary)
                         .font(.caption)
-                    Text(String(time) + " min • " + String(calories) + " cal")
+                    Text(String(time) + " • " + String(calories) + " cal")
                         .foregroundColor(.primary)
                         .font(.caption)
                 }
@@ -53,7 +49,7 @@ struct WorkoutItem: View, Hashable {
             }
         } else {
             NavigationLink(
-                destination: MealDetailScreen(imgName: imgName, title: title, link: link, mod: "Lunch", calories: 0, id: -1),
+                destination: WorkoutDetailScreen(imgName: imgName, title: title, link: link, time: time, calories: calories, id: id),
                 label: {
                     VStack(alignment: .leading) {
                         Image(imgName)
@@ -64,7 +60,7 @@ struct WorkoutItem: View, Hashable {
                         Text(title)
                             .foregroundColor(.primary)
                             .font(.caption)
-                        Text(String(time) + " min • " + String(calories) + " cal")
+                        Text(String(time) + " • " + String(calories) + " cal")
                             .foregroundColor(.primary)
                             .font(.caption)
                     }
@@ -78,6 +74,6 @@ struct WorkoutItem: View, Hashable {
 
 struct WorkoutItem_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutItem(imgName: "LegWorkout2", title: "PERFECT Leg Workout", link: "https://youtu.be/RjexvOAsVtI", time: 14, calories: 41, isHomeScreen: true)
+        WorkoutItem(imgName: "LegWorkout", title: "PERFECT Leg Workout", link: "https://youtu.be/RjexvOAsVtI", time: "14", calories: 41, isHomeScreen: true, id: 1)
     }
 }
