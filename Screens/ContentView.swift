@@ -65,59 +65,73 @@ struct ContentView: View {
                         
                         Image("Lock")
                         
-                        TextField("Enter Password", text: $password).padding().font(.custom("DIN Alternate", size: 25))
+                        SecureField("Enter Password", text: $password).padding().font(.custom("DIN Alternate", size: 25))
                     }
             
 
                 }
                 Spacer().frame(height:80)
+                
+                Group {
+                    NavigationLink(
+                        destination: OverallNavigation(selection: .home)
+                            .navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true),
+                        label: {
+                            ZStack {
+                                Capsule()
+                                    .fill(red)
+                                    .frame(height:53)
+                                    .frame(width: 255)
+                                    .shadow(radius: 8)
+                                Text("Login")
+                            }
+                            
+                        })
+                        .font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
                     
-                NavigationLink(
-                    destination: OverallNavigation(selection: .home)
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true),
-                    label: {
+                    Spacer().frame(height: 90)
+                    
+                    NavigationLink(
+                        destination: RegisterScreen()
+                            .navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true),
+                        label: {
+                            Text("New user? Register here.")
+                                .font(.custom("DIN Alternate", size: 18)).foregroundColor(Color.blue).underline()
+                        })
+                    
+                    /*Button {
+                        if(username != "" && password != "") {
+                            
+                            model.getUser(strUsername: username, strPassword: password)
+                            
+                            print(model.users)
+                            
+                        } else {
+                            usernameAlert = true
+                            return
+                        }
+                        
+
+                    } label: {
                         ZStack {
                             Capsule()
                                 .fill(red)
                                 .frame(height:53)
                                 .frame(width: 255)
                                 .shadow(radius: 8)
-                            Text("Login")
+                            Text("Login").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
+                            
                         }
-                        
-                    })
-                    .font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
-                
-                /*Button {
-                    if(username != "" && password != "") {
-                        
-                        model.getUser(strUsername: username, strPassword: password)
-                        
-                        print(model.users)
-                        
-                    } else {
-                        usernameAlert = true
-                        return
-                    }
+                    }.alert(isPresented: $usernameAlert, content: {
+                        Alert(title: Text("Enter username and password"), dismissButton: .default(Text("Got it!")))
+                    })*/
+
                     
-
-                } label: {
-                    ZStack {
-                        Capsule()
-                            .fill(red)
-                            .frame(height:53)
-                            .frame(width: 255)
-                            .shadow(radius: 8)
-                        Text("Login").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
-                        
-                    }
-                }.alert(isPresented: $usernameAlert, content: {
-                    Alert(title: Text("Enter username and password"), dismissButton: .default(Text("Got it!")))
-                })*/
-
+                    Spacer()
+                }
                 
-                Spacer()
             }
         }
     }

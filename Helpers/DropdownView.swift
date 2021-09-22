@@ -23,6 +23,13 @@ struct DropdownView: View {
     var thumbnail: Image
     var title: Text
     var view: String
+    var name: String
+    var username: String
+    var age: Int
+    var gender: String
+    var height: Int
+    var weight: Int
+    var activity: String
     
     var body: some View {
         VStack {
@@ -53,7 +60,7 @@ struct DropdownView: View {
             }
 
             if showDetail {
-                ProfileInfo().transition(.moveAndFade)
+                ProfileInfo(name: name, username: username, age: age, gender: gender, height: height, weight: weight, activity: activity).transition(.moveAndFade)
             }
         }
     }
@@ -61,6 +68,6 @@ struct DropdownView: View {
 
 struct DropdownView_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownView(thumbnail: Image("Goal"), title: Text("Goals"), view: "CircleView")
+        DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: "", username: "", age: 0, gender: "", height: 0, weight: 0, activity: "")
     }
 }

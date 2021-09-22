@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ProfileScreen: View {
+    
+    @ObservedObject var model: LoginViewModel = LoginViewModel()
+    
+    init() {
+        model.getUser(strUsername: "RikR", strPassword: "1234")
+    }
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -36,95 +43,13 @@ struct ProfileScreen: View {
                 
                 Group {
                 
-                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings")
+                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: model.users[0].fName, username: model.users[0].username, age: model.users[0].age, gender: model.users[0].gender, height: model.users[0].height, weight: model.users[0].weight, activity: model.users[0].activity)
                     
                     Divider()
                 }
                 
                 Spacer()
             }
-            
-            /*
-            Divider()
-            
-            HStack {
-                Spacer().frame(width: 20)
-                
-                NavigationLink(
-                    destination: HomeScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Home")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Home")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: MealsScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Meals")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Meals")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ExerciseScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("Exercise")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-                    
-
-                            Text("Exercise")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                
-                Spacer().frame(width: 40)
-                
-                NavigationLink(
-                    destination: ProfileScreen().navigationBarHidden(true),
-                    label: {
-                        VStack() {
-                            Image("AccountSelected")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .cornerRadius(5)
-
-                            Text("Profile")
-                                .foregroundColor(.primary)
-                                .font(.custom("DIN Alternate", size: 15))
-                        }
-                    }
-                )
-                Spacer()
-            }*/
         }.ignoresSafeArea(edges: .top)
     }
 }

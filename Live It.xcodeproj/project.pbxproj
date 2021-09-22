@@ -44,6 +44,8 @@
 		F77570D326A9B68700C365CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77570A826A9B68600C365CE /* ContentView.swift */; };
 		F77570D426A9B68700C365CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77570A926A9B68700C365CE /* Assets.xcassets */; };
 		F77570D526A9B68700C365CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F77570A926A9B68700C365CE /* Assets.xcassets */; };
+		F78C8AE726FBDEAB000B5B8A /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C8AE626FBDEAB000B5B8A /* RegisterModel.swift */; };
+		F78C8AE926FBDFEC000B5B8A /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C8AE826FBDFEC000B5B8A /* RegisterScreen.swift */; };
 		F7981F0926C335EA00017492 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7981F0826C335EA00017492 /* DropdownView.swift */; };
 		F7981F0A26C335EA00017492 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7981F0826C335EA00017492 /* DropdownView.swift */; };
 		F7A82A8E26B31B12000CF1C2 /* ExerciseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A82A8D26B31B12000CF1C2 /* ExerciseScreen.swift */; };
@@ -114,6 +116,8 @@
 		F77570C926A9B68700C365CE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F77570CD26A9B68700C365CE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		F77570CF26A9B68700C365CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F78C8AE626FBDEAB000B5B8A /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		F78C8AE826FBDFEC000B5B8A /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		F7981F0826C335EA00017492 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		F7A82A8D26B31B12000CF1C2 /* ExerciseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScreen.swift; sourceTree = "<group>"; };
 		F7AFAD5A26AF6BCA0082AE45 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				F7C1859B26CD92BB00EBEC63 /* MealDetailScreen.swift */,
 				F754B45D26DFC30F00840971 /* OverallNavigation.swift */,
 				F70AC9A126FA8ED30070088D /* WorkoutDetailScreen.swift */,
+				F78C8AE826FBDFEC000B5B8A /* RegisterScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			children = (
 				F7BEF91326F793A500D69CC9 /* LoginViewModel.swift */,
 				F7BEF91526F7942C00D69CC9 /* LoginModel.swift */,
+				F78C8AE626FBDEAB000B5B8A /* RegisterModel.swift */,
 				F7BEF91726F79A2A00D69CC9 /* LoginCall.swift */,
 				F70AC9A426FA9AB00070088D /* ProfileInfo.swift */,
 			);
@@ -465,6 +471,7 @@
 				F754B45E26DFC30F00840971 /* OverallNavigation.swift in Sources */,
 				F70AC9A526FA9AB00070088D /* ProfileInfo.swift in Sources */,
 				F77570D226A9B68700C365CE /* ContentView.swift in Sources */,
+				F78C8AE726FBDEAB000B5B8A /* RegisterModel.swift in Sources */,
 				F70AC99F26FA84690070088D /* WorkoutViewModel.swift in Sources */,
 				F70AC9A226FA8ED30070088D /* WorkoutDetailScreen.swift in Sources */,
 				F7BEF91126F7911E00D69CC9 /* MealItemViewModel.swift in Sources */,
@@ -478,6 +485,7 @@
 				F7CAE5EF26C482E600521ACE /* CheckBoxView.swift in Sources */,
 				F73C038626B20C44008509B4 /* MealsScreen.swift in Sources */,
 				F765718426B0AFE200BAAD6B /* MealItem.swift in Sources */,
+				F78C8AE926FBDFEC000B5B8A /* RegisterScreen.swift in Sources */,
 				F7BEF91426F793A500D69CC9 /* LoginViewModel.swift in Sources */,
 				F70AC99C26FA84330070088D /* WorkoutModel.swift in Sources */,
 				F70F530F26DD1DDF00D7F9FC /* MealItemCall.swift in Sources */,
