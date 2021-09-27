@@ -170,7 +170,7 @@ struct RegisterScreen: View {
                             TextField("Height", text: $height).padding().font(.custom("DIN Alternate", size: 25))
                                 .keyboardType(.decimalPad)
                             
-                            Text("in").font(.custom("DIN Alternate", size: 25)).offset(x: -20)
+                            Text("in").font(.custom("DIN Alternate", size: 25)).offset(x: -30)
                         }
                         
                     }
@@ -185,7 +185,7 @@ struct RegisterScreen: View {
                             .shadow(radius: 8)
                         
                         HStack {
-                            Spacer().frame(width:10)
+                            Spacer().frame(width:20)
                             
                             
                             
