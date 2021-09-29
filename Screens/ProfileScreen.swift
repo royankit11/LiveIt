@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct ProfileScreen: View {
-    
-    @ObservedObject var model: LoginViewModel = LoginViewModel()
-    
-    init() {
-        model.getUser(strUsername: "RikR", strPassword: "1234")
-    }
+
+    var username: String = ""
     
     var body: some View {
         VStack {
@@ -34,7 +30,7 @@ struct ProfileScreen: View {
                     
                     Spacer().frame(height: 90)
                     
-                    Text("Ekendili Chukwu").font(.custom("DIN Alternate", size: 25))
+                    Text(ContentView.model.users[0].username).font(.custom("DIN Alternate", size: 25))
                 
                     Divider()
                     
@@ -43,7 +39,7 @@ struct ProfileScreen: View {
                 
                 Group {
                 
-                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: model.users[0].fName, username: model.users[0].username, age: model.users[0].age, gender: model.users[0].gender, height: model.users[0].height, weight: model.users[0].weight, activity: model.users[0].activity)
+                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: ContentView.model.users[0].fName, username: ContentView.model.users[0].username, age: ContentView.model.users[0].age, gender: ContentView.model.users[0].gender, height: ContentView.model.users[0].height, weight: ContentView.model.users[0].weight, activity: ContentView.model.users[0].activity)
                     
                     Divider()
                 }

@@ -13,14 +13,14 @@ struct ContentView: View {
     @State private var password: String = ""
     @State private var usernameAlert = false
     @State private var passAlert = false
-    
-    let group = DispatchGroup()
+    @State private var moveNext = false
+    @State private var incorrectUser = false
     
     var lightGray = Color(red:225/255, green:232/255, blue:241/255)
     
     var red = Color(red:255/255, green:135/255, blue:135/255)
     
-    @ObservedObject var model = LoginViewModel()
+    @ObservedObject static var model = LoginViewModel()
     
     
     var body: some View {
@@ -73,22 +73,52 @@ struct ContentView: View {
                 Spacer().frame(height:80)
                 
                 Group {
-                    NavigationLink(
-                        destination: OverallNavigation(selection: .home)
-                            .navigationBarHidden(true)
-                            .navigationBarBackButtonHidden(true),
-                        label: {
+                    
+                    NavigationLink(destination: OverallNavigation(selection: .home)
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true), isActive: $moveNext) {
+                        Button {
+                            if(username != "" && password != "") {
+                                
+                                ContentView.model.getUser(strUsername: username, strPassword: password)
+                                
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    if(ContentView.model.users[0].username == username) {
+                                        print(ContentView.model.users)
+                                        moveNext = true
+
+                                    } else {
+                                        incorrectUser = true
+                                    }
+                                        }
+
+                                
+                            } else {
+                                usernameAlert = true
+                                return
+                            }
+                            
+
+                        } label: {
                             ZStack {
                                 Capsule()
                                     .fill(red)
                                     .frame(height:53)
                                     .frame(width: 255)
                                     .shadow(radius: 8)
-                                Text("Login")
+                                Text("Login").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
+                                
                             }
-                            
+                        }.alert(isPresented: $usernameAlert, content: {
+                            Alert(title: Text("Enter username and password"), dismissButton: .default(Text("Got it!")))
                         })
-                        .font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
+                        .alert(isPresented: $incorrectUser, content: {
+                            Alert(title: Text("Username or password incorrect"), dismissButton: .default(Text("Got it!")))
+                        })
+                        }
+            
+
+                    
                     
                     Spacer().frame(height: 90)
                     
@@ -100,33 +130,7 @@ struct ContentView: View {
                             Text("New user? Register here.")
                                 .font(.custom("DIN Alternate", size: 18)).foregroundColor(Color.blue).underline()
                         })
-                    
-                    /*Button {
-                        if(username != "" && password != "") {
-                            
-                            model.getUser(strUsername: username, strPassword: password)
-                            
-                            print(model.users)
-                            
-                        } else {
-                            usernameAlert = true
-                            return
-                        }
-                        
 
-                    } label: {
-                        ZStack {
-                            Capsule()
-                                .fill(red)
-                                .frame(height:53)
-                                .frame(width: 255)
-                                .shadow(radius: 8)
-                            Text("Login").font(.custom("DIN Alternate", size: 35)).foregroundColor(Color.black)
-                            
-                        }
-                    }.alert(isPresented: $usernameAlert, content: {
-                        Alert(title: Text("Enter username and password"), dismissButton: .default(Text("Got it!")))
-                    })*/
 
                     
                     Spacer()
@@ -135,6 +139,7 @@ struct ContentView: View {
             }
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

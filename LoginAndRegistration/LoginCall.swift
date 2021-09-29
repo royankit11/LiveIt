@@ -41,5 +41,21 @@ class LoginCall {
             }
             }.resume()
     }
+    
+    func updateUser(username: String, name: String, age: Int, gender: String, height: Int, weight: Int, activity: String, completion: @escaping (String) -> ()) {
+        guard let url = URL(string: "http://10.0.0.110:5000/updateProfile/" + username + "/" + name + "/" + String(age) + "/" + gender + "/" + String(height) + "/" + String(weight) + "/" + activity)
+                
+        else {
+            fatalError("URL is not correct!")
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, _, _ in
+                let success = "Success"
+            
+            DispatchQueue.main.async {
+                completion(success)
+            }
+            }.resume()
+    }
 
 }

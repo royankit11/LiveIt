@@ -33,26 +33,7 @@ struct MealsScreen: View {
             ScrollView {
                 Spacer().frame(height: 80)
                 
-                HStack {
-                    Spacer()
-                    
-                    Text("Meals").font(.custom("DIN Alternate", size: 45))
-                        .padding(.top, 30)
-                    
-                    Spacer().frame(width: 90)
-                    
-                    NavigationLink(
-                        destination: MealPrefsScreen(),
-                        label: {
-                            Image(systemName: "gear")
-                                .renderingMode(.original)
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                        }
-                    )
-                    
-                    Spacer().frame(width: 20)
-                }
+                Text("Meals").font(.custom("DIN Alternate", size: 45))
                 
                 Spacer().frame(height: 50)
                 

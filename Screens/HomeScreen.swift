@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeScreen: View {
     
-    var totalCalories: Double = 66 + (6.3 * 105)
+    var totalCalories: Double = 0
     var red = Color(red:255/255, green:135/255, blue:135/255)
 
     @ObservedObject var model: HomeScreenViewModel = HomeScreenViewModel()
@@ -31,7 +31,8 @@ struct HomeScreen: View {
 
     
     init() {
-        print("isShowing" + String(isShowingDetailView))
+        @ObservedObject var model2 = LoginViewModel()
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
         let yearString = dateFormatter.string(from: date)
@@ -44,6 +45,7 @@ struct HomeScreen: View {
     
         model.fetchIDs(month: monthString, day: dayString, year: yearString)
 
+        
         
 
         
@@ -79,8 +81,52 @@ struct HomeScreen: View {
         }
 
         dailyCalories = bMeal.calories + lMeal.calories + dMeal.calories
-        totalCalories = (totalCalories + (12.9 * 68) - (6.8 * 16)) * 1.55
+        
+        var tCals: Double = 0
+        let gender = ContentView.model.users[0].gender
+        let height = ContentView.model.users[0].height
+        let weight = ContentView.model.users[0].weight
+        let age = ContentView.model.users[0].age
+        let activity = ContentView.model.users[0].activity
+        
+
+
+        if(gender == "Male") {
+            tCals = 66 + (6.3 * Double((weight)))
+            tCals = tCals + (12.9 * Double(height))
+            
+            tCals =  tCals - (6.8 * Double(age))
+
+
+        } else {
+            tCals = 655 + (4.3 * Double((weight)))
+            tCals = tCals + (4.7 * Double(height))
+            
+            tCals =  tCals - (4.7 * Double(age))
+
+        }
+        
+        if(activity == "Sedentary") {
+            tCals = tCals * 1.2
+        } else if(activity == "Lightly Active") {
+            tCals = tCals * 1.375
+        } else if(activity == "Moderately Active") {
+            tCals = tCals * 1.55
+        } else if(activity == "Very Active") {
+            tCals = tCals * 1.725
+        } else {
+            tCals = tCals * 1.9
+        }
+            
+        tCals = round(tCals)
+
+        
+        totalCalories = tCals
+        
+
     }
+        
+
     
     var body: some View {
         
@@ -92,7 +138,7 @@ struct HomeScreen: View {
                 HStack {
                     Spacer()
                     
-                    Text("Welcome Rik").font(.custom("DIN Alternate", size: 45))
+                    Text("Welcome " + ContentView.model.users[0].fName).font(.custom("DIN Alternate", size: 45))
 
                     
                     Spacer().frame(width: 50)
@@ -190,3 +236,4 @@ struct HomeScreen_Previews: PreviewProvider {
         HomeScreen()
     }
 }
+

@@ -17,6 +17,7 @@
 		F70AC9A326FA8ED30070088D /* WorkoutDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70AC9A126FA8ED30070088D /* WorkoutDetailScreen.swift */; };
 		F70AC9A526FA9AB00070088D /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70AC9A426FA9AB00070088D /* ProfileInfo.swift */; };
 		F70AC9A626FA9AB00070088D /* ProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70AC9A426FA9AB00070088D /* ProfileInfo.swift */; };
+		F70BB01F2703B05D0078B6EC /* ProfileInfoEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70BB01E2703B05D0078B6EC /* ProfileInfoEdit.swift */; };
 		F70CF11426DE684E00625573 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CF11326DE684E00625573 /* HomeScreenViewModel.swift */; };
 		F70CF11626DE690A00625573 /* HomeScreenCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CF11526DE690A00625573 /* HomeScreenCall.swift */; };
 		F70CF11826DE69FC00625573 /* HomeScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CF11726DE69FC00625573 /* HomeScreenModel.swift */; };
@@ -89,6 +90,7 @@
 		F70AC99E26FA84690070088D /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		F70AC9A126FA8ED30070088D /* WorkoutDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailScreen.swift; sourceTree = "<group>"; };
 		F70AC9A426FA9AB00070088D /* ProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfo.swift; sourceTree = "<group>"; };
+		F70BB01E2703B05D0078B6EC /* ProfileInfoEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoEdit.swift; sourceTree = "<group>"; };
 		F70CF11326DE684E00625573 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		F70CF11526DE690A00625573 /* HomeScreenCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenCall.swift; sourceTree = "<group>"; };
 		F70CF11726DE69FC00625573 /* HomeScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenModel.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				F78C8AE626FBDEAB000B5B8A /* RegisterModel.swift */,
 				F7BEF91726F79A2A00D69CC9 /* LoginCall.swift */,
 				F70AC9A426FA9AB00070088D /* ProfileInfo.swift */,
+				F70BB01E2703B05D0078B6EC /* ProfileInfoEdit.swift */,
 			);
 			path = LoginAndRegistration;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				F72F22BE26C3274500B5E8B3 /* CircleImage.swift in Sources */,
 				F70F531226DD1E0700D7F9FC /* MealItemModel.swift in Sources */,
 				F7A82A8E26B31B12000CF1C2 /* ExerciseScreen.swift in Sources */,
+				F70BB01F2703B05D0078B6EC /* ProfileInfoEdit.swift in Sources */,
 				F72F22BB26C3263B00B5E8B3 /* ProfileScreen.swift in Sources */,
 				F70CF11B26DE787600625573 /* HomeScreenIDModel.swift in Sources */,
 				F70CF11426DE684E00625573 /* HomeScreenViewModel.swift in Sources */,

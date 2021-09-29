@@ -9,13 +9,13 @@ import Foundation
 import SwiftUI
 struct LoginModel: Codable, Hashable, Identifiable {
     var id: Int
-    let fName: String
-    let username: String
-    let password: String
-    let age: Int
-    let gender: String
-    let height: Int
-    let weight: Int
-    let activity: String
-    let Error: String
+    var fName: String
+    var username: String
+    var password: String
+    var age: Int
+    var gender: String
+    var height: Int
+    var weight: Int
+    var activity: String
+    var Error: String
 }

@@ -18,12 +18,25 @@ struct ProfileInfo: View {
     var activity: String
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading){
             Group {
                 HStack {
                     Text("Name:").font(.custom("DIN Alternate", size: 20))
                     Spacer().frame(width: 20)
                     Text(name).font(.custom("DIN Alternate", size: 20))
+                    
+                    Spacer().frame(width: 90)
+                    
+                    NavigationLink(destination: ProfileInfoEdit(name: name, username: username, age: age, gender: gender, height: height, weight: weight, activity: activity).navigationBarHidden(true)
+                                    .navigationBarBackButtonHidden(true), label: {
+                        Image(systemName: "pencil.circle")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .offset(y: -20)
+                            .foregroundColor(Color.black)
+                    })
+                    
+
                 }
                 
                 Spacer().frame(height: 15)
