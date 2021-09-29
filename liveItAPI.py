@@ -14,7 +14,7 @@ class getUser(Resource):
         conn = pyodbc.connect('Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ='+DBfile)
         cur = conn.cursor()
 
-        SQL = "SELECT User_ID, FirstName, Username, Password, Age, Gender, Height, Weight, Activity FROM UserData WHERE UCase(Username) = '" + strUsername.upper() + "'"
+        SQL = "SELECT User_ID, FirstName, LastName, Username, Password, Age, Gender, Height, Weight, Activity FROM UserData WHERE UCase(Username) = '" + strUsername.upper() + "'"
         cur.execute(SQL)
         users = cur.fetchall()
         cur.close()
@@ -24,17 +24,18 @@ class getUser(Resource):
 
 
         if users:
-            if strPassword == str(users[0][3]):
+            if strPassword == str(users[0][4]):
                 userData = {}
                 userData["id"] = users[0][0]
                 userData["fName"] = users[0][1]
+                userData["lName"] = users[0][2]
                 userData["username"] = strUsername
                 userData["password"] = strPassword
-                userData["age"] = users[0][4]
-                userData["gender"] = users[0][5]
-                userData["height"] = users[0][6]
-                userData["weight"] = users[0][7]
-                userData["activity"] = users[0][8]
+                userData["age"] = users[0][5]
+                userData["gender"] = users[0][6]
+                userData["height"] = users[0][7]
+                userData["weight"] = users[0][8]
+                userData["activity"] = users[0][9]
                 userData["Error"] = ""
                 userArr.append(userData)
 
@@ -42,6 +43,7 @@ class getUser(Resource):
                 userData = {}
                 userData["id"] = -1
                 userData["fName"] = ""
+                userData["lName"] = ""
                 userData["username"] = ""
                 userData["password"] = ""
                 userData["age"] = 0
@@ -55,6 +57,7 @@ class getUser(Resource):
             userData = {}
             userData["id"] = -1
             userData["fName"] = ""
+            userData["lName"] = ""
             userData["username"] = ""
             userData["password"] = ""
             userData["age"] = 0
@@ -114,7 +117,7 @@ class updateProfile(Resource):
 
 
                    
-        SQL = "UPDATE UserData SET FirstName = '" + strFirstName + "', Age = " + intAge + ", Gender = '" + strGender + "',"
+        SQL = "UPDATE UserData SET FirstName = '" + strFirstName + "', LastName = '" + strLastName + "', Age = " + intAge + ", Gender = '" + strGender + "',"
         SQL = SQL + " Height = " + intHeight + ", Weight = " + intWeight + ", Activity = '" + strActivity + "' WHERE Username = '" + strUsername + "'"
 
         conn2 = pyodbc.connect('Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ='+DBfile)
@@ -464,8 +467,8 @@ class returnWorkouts(Resource):
 
 
 objapi.add_resource(getUser, '/getUser/<strUsername>/<strPassword>')
-objapi.add_resource(Register, "/Register/<strFirstName>/<strUsername>/<strPassword>/<intAge>/<strGender>/<intHeight>/<intWeight>/<strActivity>")
-objapi.add_resource(updateProfile, "/updateProfile/<strUsername>/<strName>/<intAge>/<strGender>/<intHeight>/<intWeight>/<strActivity>")
+objapi.add_resource(Register, "/Register/<strFirstName>/<strLastName>/<strUsername>/<strPassword>/<intAge>/<strGender>/<intHeight>/<intWeight>/<strActivity>")
+objapi.add_resource(updateProfile, "/updateProfile/<strUsername>/<strFirstName>/<strLastName>/<intAge>/<strGender>/<intHeight>/<intWeight>/<strActivity>")
 objapi.add_resource(getMeals, "/getMeals/<strMOD>/<intCals>/<strCuisines>")
 objapi.add_resource(chooseDailyMeals, "/chooseDailyMeals/<strMonth>/<strDay>/<strYear>/<intMealID>/<strMOD>")
 objapi.add_resource(returnMealIDs, "/returnMealIDs/<strMonth>/<strDay>/<strYear>")
