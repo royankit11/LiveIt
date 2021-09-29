@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileInfoEdit: View {
     
-    var name: String
+    var fName: String
+    var lName: String
     var username: String
     var age: Int
     var gender: String
@@ -17,7 +18,8 @@ struct ProfileInfoEdit: View {
     var weight: Int
     var activity: String
     
-    @State var nameEdit: String = ""
+    @State var fNameEdit: String = ""
+    @State var lNameEdit: String = ""
     @State var ageEdit: String = ""
     @State var genderEdit: String = ""
     @State var heightEdit: String = ""
@@ -31,10 +33,11 @@ struct ProfileInfoEdit: View {
     var lightGray = Color(red:225/255, green:232/255, blue:241/255)
     var red = Color(red:255/255, green:135/255, blue:135/255)
     
-    init(name: String, username: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
+    init(fName: String, lName: String, username: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
         genderEdit = gender
         activityEdit = activity
-        self.name = name
+        self.fName = fName
+        self.lName = lName
         self.username = username
         self.age = age
         self.gender = gender
@@ -42,7 +45,8 @@ struct ProfileInfoEdit: View {
         self.weight = weight
         self.activity = activity
         
-        _nameEdit = State(initialValue: name)
+        _fNameEdit = State(initialValue: fName)
+        _lNameEdit = State(initialValue: lName)
         _ageEdit = State(initialValue: String(age))
         _heightEdit = State(initialValue: String(height))
         _weightEdit = State(initialValue: String(weight))
@@ -56,8 +60,8 @@ struct ProfileInfoEdit: View {
                 VStack(alignment: .leading){
                     Group {
                         HStack {
-                            Text("Name:").font(.custom("DIN Alternate", size: 20))
-                            Spacer().frame(width: 20)
+                            Text("First Name:").font(.custom("DIN Alternate", size: 20))
+                            Spacer().frame(width: 5)
                             ZStack {
                                 Capsule()
                                     .fill(lightGray)
@@ -66,15 +70,35 @@ struct ProfileInfoEdit: View {
                                     .shadow(radius: 8)
                                 
                                 HStack {
-                                    Spacer().frame(width:60)
+                                    Spacer().frame(width:40)
                                     
                                     
-                                    TextField(name, text: $nameEdit).padding().font(.custom("DIN Alternate", size: 25))
+                                    TextField(fName, text: $fNameEdit).padding().font(.custom("DIN Alternate", size: 25))
                                 }
                             }
                         }
                         
+                        
                         Spacer().frame(height: 15)
+                        
+                        HStack {
+                            Text("Last Name:").font(.custom("DIN Alternate", size: 20))
+                            Spacer().frame(width: 5)
+                            ZStack {
+                                Capsule()
+                                    .fill(lightGray)
+                                    .frame(height:40)
+                                    .frame(width: 200)
+                                    .shadow(radius: 8)
+                                
+                                HStack {
+                                    Spacer().frame(width:40)
+                                    
+                                    
+                                    TextField(lName, text: $lNameEdit).padding().font(.custom("DIN Alternate", size: 25))
+                                }
+                            }
+                        }
                         
                         HStack {
                             Text("Age: ").font(.custom("DIN Alternate", size: 20))
@@ -242,7 +266,9 @@ struct ProfileInfoEdit: View {
 
                             Button {
                                 
-                                ContentView.model.users[0].fName = nameEdit
+                                ContentView.model.users[0].fName = fNameEdit
+                                
+                                ContentView.model.users[0].lName = lNameEdit
                                 
                                 ContentView.model.users[0].age = Int(ageEdit)!
                                 
@@ -256,7 +282,7 @@ struct ProfileInfoEdit: View {
                                 
                                 activityEdit = activityEdit.replacingOccurrences(of: " ", with: "%20")
                                 
-                                model.updateUser(username: username, name: nameEdit, age: Int(ageEdit)!, gender: genderEdit, height: Int(heightEdit)!, weight: Int(weightEdit)!, activity: activityEdit)
+                                model.updateUser(username: username, fName: fNameEdit, lName: lNameEdit, age: Int(ageEdit)!, gender: genderEdit, height: Int(heightEdit)!, weight: Int(weightEdit)!, activity: activityEdit)
                                 
                                 register = true
                             } label: {
@@ -299,6 +325,6 @@ struct ProfileInfoEdit: View {
 
 struct ProfileInfoEdit_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInfoEdit(name: "Rik", username: "RikR", age: 16, gender: "Male", height: 68, weight: 115, activity: "Moderately active")
+        ProfileInfoEdit(fName: "Rik", lName: "Roy", username: "RikR", age: 16, gender: "Male", height: 68, weight: 115, activity: "Moderately active")
     }
 }

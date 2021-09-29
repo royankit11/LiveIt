@@ -23,7 +23,8 @@ struct DropdownView: View {
     var thumbnail: Image
     var title: Text
     var view: String
-    var name: String
+    var fName: String
+    var lName: String
     var username: String
     var age: Int
     var gender: String
@@ -60,7 +61,7 @@ struct DropdownView: View {
             }
 
             if showDetail {
-                ProfileInfo(name: name, username: username, age: age, gender: gender, height: height, weight: weight, activity: activity).transition(.moveAndFade)
+                ProfileInfo(fName: fName, lName: lName, username: username, age: age, gender: gender, height: height, weight: weight, activity: activity).transition(.moveAndFade)
             }
         }
     }
@@ -68,6 +69,6 @@ struct DropdownView: View {
 
 struct DropdownView_Previews: PreviewProvider {
     static var previews: some View {
-        DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: "", username: "", age: 0, gender: "", height: 0, weight: 0, activity: "")
+        DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", fName: "", lName: "", username: "", age: 0, gender: "", height: 0, weight: 0, activity: "")
     }
 }

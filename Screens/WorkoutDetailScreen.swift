@@ -19,7 +19,7 @@ struct WorkoutDetailScreen: View {
     var gray = Color(red:186/255, green:186/255, blue:186/255)
     @State private var selected: Bool
     
-    init(imgName: String, title: String, link: String, time: String, calories: Int, id: Int) {
+    init(imgName: String, title: String, link: String, time: String, calories: Int, id: Int, selected: Bool) {
         self.imgName = imgName
         self.title = title
         self.link = link
@@ -27,7 +27,7 @@ struct WorkoutDetailScreen: View {
         self.calories = calories
         self.id = id
         
-        selected = false
+        self.selected = selected
     }
     
     
@@ -113,6 +113,6 @@ struct WorkoutDetailScreen: View {
 
 struct WorkoutDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutDetailScreen(imgName: "LegWorkout", title: "PERFECT Leg Workout", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", time: "14:32", calories: 42, id: 10)
+        WorkoutDetailScreen(imgName: "LegWorkout", title: "PERFECT Leg Workout", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", time: "14:32", calories: 42, id: 10, selected: false)
     }
 }

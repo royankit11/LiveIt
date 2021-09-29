@@ -39,7 +39,7 @@ struct ProfileScreen: View {
                 
                 Group {
                 
-                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", name: ContentView.model.users[0].fName, username: ContentView.model.users[0].username, age: ContentView.model.users[0].age, gender: ContentView.model.users[0].gender, height: ContentView.model.users[0].height, weight: ContentView.model.users[0].weight, activity: ContentView.model.users[0].activity)
+                    DropdownView(thumbnail: Image("Settings"), title: Text("Profile Info"), view: "Settings", fName: ContentView.model.users[0].fName, lName: ContentView.model.users[0].lName, username: ContentView.model.users[0].username, age: ContentView.model.users[0].age, gender: ContentView.model.users[0].gender, height: ContentView.model.users[0].height, weight: ContentView.model.users[0].weight, activity: ContentView.model.users[0].activity)
                     
                     Divider()
                 }

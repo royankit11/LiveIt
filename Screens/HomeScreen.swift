@@ -12,20 +12,20 @@ struct HomeScreen: View {
     var totalCalories: Double = 0
     var red = Color(red:255/255, green:135/255, blue:135/255)
 
-    @ObservedObject var model: HomeScreenViewModel = HomeScreenViewModel()
+    @ObservedObject static var model: HomeScreenViewModel = HomeScreenViewModel()
 
     
     @State private var isShowingDetailView = false
     
     var dailyCalories: Int = 0
 
-    var bMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Breakfast", calories: 0, id: 0, isHomeScreen: true)
+    var bMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Breakfast", calories: 0, id: -1, isHomeScreen: true)
     
-    var lMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Lunch", calories: 0, id: 0, isHomeScreen: true)
+    var lMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Lunch", calories: 0, id: -1, isHomeScreen: true)
     
-    var dMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Dinner", calories: 0, id: 0, isHomeScreen: true)
+    var dMeal: MealItem = MealItem(imgName: "AddMeal", title: "", link: "", MOD: "Dinner", calories: 0, id: -1, isHomeScreen: true)
     
-    var workoutItem: WorkoutItem = WorkoutItem(imgName: "AddMeal", title: "", link: "", time: "", calories: 0, isHomeScreen: true, id: 0)
+    var workoutItem: WorkoutItem = WorkoutItem(imgName: "AddMeal", title: "", link: "", time: "", calories: 0, isHomeScreen: true, id: -1)
     
     let date = Date()
 
@@ -43,40 +43,40 @@ struct HomeScreen: View {
         
         
     
-        model.fetchIDs(month: monthString, day: dayString, year: yearString)
+        HomeScreen.model.fetchIDs(month: monthString, day: dayString, year: yearString)
 
         
         
 
         
-        let b_id = model.ids[0].B_ID
-        let l_id = model.ids[0].L_ID
-        let d_id = model.ids[0].D_ID
-        let w_id = model.ids[0].W_ID
+        let b_id = HomeScreen.model.ids[0].B_ID
+        let l_id = HomeScreen.model.ids[0].L_ID
+        let d_id = HomeScreen.model.ids[0].D_ID
+        let w_id = HomeScreen.model.ids[0].W_ID
 
     
         
         if(b_id != 0) {
-            model.chooseMeals(mealID: b_id)
-            let meal = model.mealsFromID[0]
+            HomeScreen.model.chooseMeals(mealID: b_id)
+            let meal = HomeScreen.model.mealsFromID[0]
             bMeal = MealItem(imgName: meal.ImageName, title: meal.RecipeName, link: meal.Link, MOD: meal.MealOfDay, calories: meal.Calories, id: meal.id, isHomeScreen: true)
         }
         
         if(l_id != 0) {
-            model.chooseMeals(mealID: l_id)
-            let meal = model.mealsFromID[0]
+            HomeScreen.model.chooseMeals(mealID: l_id)
+            let meal = HomeScreen.model.mealsFromID[0]
             lMeal = MealItem(imgName: meal.ImageName, title: meal.RecipeName, link: meal.Link, MOD: meal.MealOfDay, calories: meal.Calories, id: meal.id, isHomeScreen: true)
         }
         
         if(d_id != 0) {
-            model.chooseMeals(mealID: d_id)
-            let meal = model.mealsFromID[0]
+            HomeScreen.model.chooseMeals(mealID: d_id)
+            let meal = HomeScreen.model.mealsFromID[0]
             dMeal = MealItem(imgName: meal.ImageName, title: meal.RecipeName, link: meal.Link, MOD: meal.MealOfDay, calories: meal.Calories, id: meal.id, isHomeScreen: true)
         }
         
         if(w_id != 0) {
-            model.chooseWorkouts(workoutID: w_id)
-            let workout = model.workoutsFromID[0]
+            HomeScreen.model.chooseWorkouts(workoutID: w_id)
+            let workout = HomeScreen.model.workoutsFromID[0]
             workoutItem = WorkoutItem(imgName: workout.ImageName, title: workout.Title, link: workout.Link, time: workout.Time, calories: workout.Calories, isHomeScreen: true, id: workout.id)
         }
 

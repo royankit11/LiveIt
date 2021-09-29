@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginModel: Codable, Hashable, Identifiable {
     var id: Int
     var fName: String
+    var lName: String
     var username: String
     var password: String
     var age: Int

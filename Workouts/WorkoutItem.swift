@@ -48,25 +48,52 @@ struct WorkoutItem: View, Hashable {
                 .padding(.leading, 15)
             }
         } else {
-            NavigationLink(
-                destination: WorkoutDetailScreen(imgName: imgName, title: title, link: link, time: time, calories: calories, id: id),
-                label: {
-                    VStack(alignment: .leading) {
-                        Image(imgName)
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 199, height: 170)
-                            .cornerRadius(5)
-                        Text(title)
-                            .foregroundColor(.primary)
-                            .font(.caption)
-                        Text(String(time) + " • " + String(calories) + " cal")
-                            .foregroundColor(.primary)
-                            .font(.caption)
+            if(id == HomeScreen.model.ids[0].W_ID) {
+                NavigationLink(
+                    destination: WorkoutDetailScreen(imgName: imgName, title: title, link: link, time: time, calories: calories, id: id, selected: true),
+                    label: {
+                        VStack(alignment: .leading) {
+                            Image(imgName)
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 199, height: 170)
+                                .cornerRadius(5)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.red, lineWidth: 4)
+                                )
+                            Text(title)
+                                .foregroundColor(.primary)
+                                .font(.caption)
+                            Text(String(time) + " • " + String(calories) + " cal")
+                                .foregroundColor(.primary)
+                                .font(.caption)
+                        }
+                        .padding(.leading, 15)
                     }
-                    .padding(.leading, 15)
-                }
-            )
+                )
+            } else {
+                NavigationLink(
+                    destination: WorkoutDetailScreen(imgName: imgName, title: title, link: link, time: time, calories: calories, id: id, selected: false),
+                    label: {
+                        VStack(alignment: .leading) {
+                            Image(imgName)
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 199, height: 170)
+                                .cornerRadius(5)
+                            Text(title)
+                                .foregroundColor(.primary)
+                                .font(.caption)
+                            Text(String(time) + " • " + String(calories) + " cal")
+                                .foregroundColor(.primary)
+                                .font(.caption)
+                        }
+                        .padding(.leading, 15)
+                    }
+                )
+            }
+            
         }
 
     }

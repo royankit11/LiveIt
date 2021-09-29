@@ -17,7 +17,7 @@ class LoginViewModel: ObservableObject {
         }
     }
     
-    var message = [RegisterModel]() {
+    var message = String() {
         didSet {
             didChange.send(self)
         }
@@ -38,16 +38,16 @@ class LoginViewModel: ObservableObject {
         
     }
     
-    func registerUser(firstName: String, username: String, password: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
-        LoginCall().registerUser(firstName: firstName, username: username, password: password, age: age, gender: gender, height: height, weight: weight, activity: activity){
+    func registerUser(firstName: String, lastName: String, username: String, password: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
+        LoginCall().registerUser(firstName: firstName, lastName: lastName, username: username, password: password, age: age, gender: gender, height: height, weight: weight, activity: activity){
             self.message = $0
         }
         
         
     }
     
-    func updateUser(username: String, name: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
-        LoginCall().updateUser(username: username, name: name, age: age, gender: gender, height: height, weight: weight, activity: activity){
+    func updateUser(username: String, fName: String, lName: String, age: Int, gender: String, height: Int, weight: Int, activity: String) {
+        LoginCall().updateUser(username: username, fName: fName, lName: lName, age: age, gender: gender, height: height, weight: weight, activity: activity){
             self.message2 = $0
         }
         

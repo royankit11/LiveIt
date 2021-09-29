@@ -18,15 +18,14 @@ struct MealDetailScreen: View {
     var gray = Color(red:186/255, green:186/255, blue:186/255)
     @State private var selected: Bool
     
-    init(imgName: String, title: String, link: String, mod: String, calories: Int, id: Int) {
+    init(imgName: String, title: String, link: String, mod: String, calories: Int, id: Int, selected: Bool) {
         self.imgName = imgName
         self.title = title
         self.link = link
         self.mod = mod
         self.calories = calories
         self.id = id
-        
-        selected = false
+        self.selected = selected
     }
     
     
@@ -112,6 +111,6 @@ struct MealDetailScreen: View {
 
 struct MealDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MealDetailScreen(imgName: "ChickenKatsu", title: "Chicken Katsu", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", mod: "Dinner", calories: 610, id: 10)
+        MealDetailScreen(imgName: "ChickenKatsu", title: "Chicken Katsu", link: "https://www.foodnetwork.com/recipes/food-network-kitchen/chicken-katsu-with-ginger-rice-3364533#/", mod: "Dinner", calories: 610, id: 10, selected: true)
     }
 }

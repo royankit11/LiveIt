@@ -25,8 +25,8 @@ class LoginCall {
             }.resume()
     }
     
-    func registerUser(firstName: String, username: String, password: String, age: Int, gender: String, height: Int, weight: Int, activity: String, completion: @escaping ([RegisterModel]) -> ()) {
-        guard let url = URL(string: "http://10.0.0.110:5000/Register/" + firstName + "/" + username + "/" + password + "/" + String(age) + "/" + gender + "/" + String(height) + "/" + String(weight) + "/" + activity)
+    func registerUser(firstName: String, lastName: String, username: String, password: String, age: Int, gender: String, height: Int, weight: Int, activity: String, completion: @escaping (String) -> ()) {
+        guard let url = URL(string: "http://10.0.0.110:5000/Register/" + firstName + "/" + lastName + "/" + username + "/" + password + "/" + String(age) + "/" + gender + "/" + String(height) + "/" + String(weight) + "/" + activity)
                 
         else {
             fatalError("URL is not correct!")
@@ -34,7 +34,7 @@ class LoginCall {
         
         URLSession.shared.dataTask(with: url) { data, _, _ in
             
-                let success = try! JSONDecoder().decode([RegisterModel].self, from: data!)
+                let success = "success"
             
             DispatchQueue.main.async {
                 completion(success)
@@ -42,8 +42,8 @@ class LoginCall {
             }.resume()
     }
     
-    func updateUser(username: String, name: String, age: Int, gender: String, height: Int, weight: Int, activity: String, completion: @escaping (String) -> ()) {
-        guard let url = URL(string: "http://10.0.0.110:5000/updateProfile/" + username + "/" + name + "/" + String(age) + "/" + gender + "/" + String(height) + "/" + String(weight) + "/" + activity)
+    func updateUser(username: String, fName: String, lName: String, age: Int, gender: String, height: Int, weight: Int, activity: String, completion: @escaping (String) -> ()) {
+        guard let url = URL(string: "http://10.0.0.110:5000/updateProfile/" + username + "/" + fName + "/" + lName + "/" + String(age) + "/" + gender + "/" + String(height) + "/" + String(weight) + "/" + activity)
                 
         else {
             fatalError("URL is not correct!")
