@@ -19,30 +19,36 @@ struct OverallNavigation: View {
     }
     
     var body: some View {
-        TabView(selection: $selection) {
-            HomeScreen()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-                .tag(Tab.home)
+        NavigationView {
+            TabView(selection: $selection) {
+                HomeScreen()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                    .tag(Tab.home)
 
-            MealsScreen()
-                .tabItem {
-                    Label("Meals", systemImage: "cart")
-                }
-                .tag(Tab.meals)
-            ExerciseScreen()
-                .tabItem {
-                    Label("Exercise", systemImage: "figure.walk")
-                }
-                .tag(Tab.exercise)
-            
-            ProfileScreen()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-                .tag(Tab.profile)
-        }
+                MealsScreen()
+                    .tabItem {
+                        Label("Meals", systemImage: "cart")
+                    }
+                    .tag(Tab.meals)
+                ExerciseScreen()
+                    .tabItem {
+                        Label("Exercise", systemImage: "figure.walk")
+                    }
+                    .tag(Tab.exercise)
+                
+                ProfileScreen()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
+                    .tag(Tab.profile)
+            }
+        }.navigationBarTitle("")
+            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationBarHidden(true)
+            .padding(.top, 0.1)
+            .navigationBarBackButtonHidden(true)
     }
 }
 
