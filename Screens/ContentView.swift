@@ -75,8 +75,9 @@ struct ContentView: View {
                 Group {
                     
                     NavigationLink(destination: OverallNavigation(selection: .home)
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true), isActive: $moveNext) {
+                                    .navigationBarHidden(true)
+                                    .navigationBarBackButtonHidden(true)
+                                   , isActive: $moveNext) {
                         Button {
                             if(username != "" && password != "") {
                                 
@@ -137,7 +138,9 @@ struct ContentView: View {
                 }
                 
             }
-        }
+        }.navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
     }
     
 }

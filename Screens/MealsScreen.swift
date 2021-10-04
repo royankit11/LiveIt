@@ -28,6 +28,7 @@ struct MealsScreen: View {
     }
 
     var body: some View {
+        /*NavigationLink(destination: OverallNavigation(selection: .home), isActive: $isShowingDetailView) { EmptyView() }*/
         
         VStack {
             ScrollView {

@@ -129,104 +129,109 @@ struct HomeScreen: View {
 
     
     var body: some View {
-        
-        VStack {
-            Spacer().frame(height: 100)
-            
-            ScrollView {
+        NavigationView {
+            VStack {
+                Spacer().frame(height: 100)
                 
-                HStack {
-                    Spacer()
-                    
-                    Text("Welcome " + ContentView.model.users[0].fName).font(.custom("DIN Alternate", size: 45))
-
-                    
-                    Spacer().frame(width: 50)
-                    
-                    Button {
-                        isShowingDetailView.toggle()
-                    } label: {
-                        Image(systemName: "arrow.clockwise.circle")
-                            .renderingMode(.original)
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                    }
-                    
-                    Spacer().frame(width: 20)
-                
-                }
-                
-
-                
-                Spacer().frame(height: 20)
-            
-                Group {
-                    HStack {
-                        Text("Today's Calories")
-                            .font(.custom("DIN Alternate", size: 25))
-                            .padding(.leading, 15)
-                            .padding(.top, 5)
-                        
-                        Spacer()
-                    }
-                    
-                    
-                    ProgressBar(value: Float(dailyCalories)/Float(totalCalories))
-                        .frame(height: 20)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
+                ScrollView {
                     
                     HStack {
                         Spacer()
                         
-                        Text(String(dailyCalories) + "/" + String(totalCalories)).font(.custom("DIN Alternate", size: 20))
+                        Text("Welcome " + ContentView.model.users[0].fName).font(.custom("DIN Alternate", size: 45))
+
                         
-                        Spacer().frame(width:30)
+                        Spacer().frame(width: 50)
+                        
+                        Button {
+                            isShowingDetailView.toggle()
+                        } label: {
+                            Image(systemName: "arrow.clockwise.circle")
+                                .renderingMode(.original)
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        
+                        Spacer().frame(width: 20)
+                    
                     }
                     
+
                     
                     Spacer().frame(height: 20)
-                    
-                    HStack {
-                        Text("Today's Meal")
-                            .font(.custom("DIN Alternate", size: 25))
-                            .padding(.leading, 15)
-                            .padding(.top, 5)
+                
+                    Group {
+                        HStack {
+                            Text("Today's Calories")
+                                .font(.custom("DIN Alternate", size: 25))
+                                .padding(.leading, 15)
+                                .padding(.top, 5)
+                            
+                            Spacer()
+                        }
                         
-                        Spacer()
-                    }
-                    
-                    HomeScreenMealRow(bMeal: bMeal, lMeal: lMeal, dMeal: dMeal)
-                    
-                    
-                    Spacer().frame(height: 20)
-                    
-                    HStack {
-                        Text("Today's Workout")
-                            .font(.custom("DIN Alternate", size: 25))
-                            .padding(.leading, 15)
-                            .padding(.top, 5)
                         
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        workoutItem
+                        ProgressBar(value: Float(dailyCalories)/Float(totalCalories))
+                            .frame(height: 20)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
                         
-                        Spacer()
-                    }
-                    
+                        HStack {
+                            Spacer()
+                            
+                            Text(String(dailyCalories) + "/" + String(totalCalories)).font(.custom("DIN Alternate", size: 20))
+                            
+                            Spacer().frame(width:30)
+                        }
+                        
+                        
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            Text("Today's Meal")
+                                .font(.custom("DIN Alternate", size: 25))
+                                .padding(.leading, 15)
+                                .padding(.top, 5)
+                            
+                            Spacer()
+                        }
+                        
+                        HomeScreenMealRow(bMeal: bMeal, lMeal: lMeal, dMeal: dMeal)
+                        
+                        
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            Text("Today's Workout")
+                                .font(.custom("DIN Alternate", size: 25))
+                                .padding(.leading, 15)
+                                .padding(.top, 5)
+                            
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            workoutItem
+                            
+                            Spacer()
+                        }
+                        
 
+                        
+                        
+                        Spacer()
+                    }
                     
                     
-                    Spacer()
+                    
+                    NavigationLink(destination: OverallNavigation(selection: .home).navigationBarHidden(true).navigationBarBackButtonHidden(true), isActive: $isShowingDetailView) { EmptyView() }
+                    
                 }
                 
-                NavigationLink(destination: OverallNavigation(selection: .home).navigationBarHidden(true).navigationBarBackButtonHidden(true), isActive: $isShowingDetailView) { EmptyView() }
-                
-            }
-            
-        }.ignoresSafeArea(edges: .top)
+            }.ignoresSafeArea(edges: .top)
+        }.navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         
     }
 }
