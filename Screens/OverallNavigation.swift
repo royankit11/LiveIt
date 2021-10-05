@@ -47,7 +47,7 @@ struct OverallNavigation: View {
         }.navigationBarTitle("")
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarHidden(true)
-            .padding(.top, 0.1)
+            .padding(.top, 1)
             .navigationBarBackButtonHidden(true)
     }
 }

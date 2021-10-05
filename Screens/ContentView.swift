@@ -85,7 +85,6 @@ struct ContentView: View {
                                 
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                     if(ContentView.model.users[0].username == username) {
-                                        print(ContentView.model.users)
                                         moveNext = true
 
                                     } else {

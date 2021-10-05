@@ -130,17 +130,17 @@ struct HomeScreen: View {
     
     var body: some View {
         VStack {
-            Spacer().frame(height: 100)
+            Spacer().frame(height: 50)
             
             ScrollView {
                 
                 HStack {
                     Spacer()
                     
-                    Text("Welcome " + ContentView.model.users[0].fName).font(.custom("DIN Alternate", size: 45))
+                    Text("Welcome " + ContentView.model.users[0].fName).font(.custom("DIN Alternate", size: 35))
 
                     
-                    Spacer().frame(width: 50)
+                    Spacer().frame(width: 80)
                     
                     Button {
                         isShowingDetailView.toggle()

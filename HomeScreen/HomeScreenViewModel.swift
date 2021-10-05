@@ -55,7 +55,7 @@ class HomeScreenViewModel: ObservableObject {
             self.ids = $0
         }
         
-        usleep(200000)
+        usleep(500000)
         
     }
     
@@ -65,7 +65,7 @@ class HomeScreenViewModel: ObservableObject {
             self.mealsFromID = $0
         }
         
-        usleep(200000)
+        usleep(500000)
         
     }
     
@@ -81,7 +81,7 @@ class HomeScreenViewModel: ObservableObject {
             self.workoutsFromID = $0
         }
         
-        usleep(200000)
+        usleep(500000)
         
     }
     
